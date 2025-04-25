@@ -1,0 +1,184 @@
+.section {
+  position: relative;
+  padding: 80px 20px;
+  background-color: #f5f3e5;
+  color: #fefefe;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/background/cn-background.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.2;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.title {
+  font-size: 2rem;
+  color: #de1717;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif;
+}
+
+.text {
+  flex: 2;
+  font-size: 1.2rem;
+  color: #4a3e36;
+  line-height: 2;
+  max-width: 700px;
+}
+
+.link {
+  color: #c94d3f;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.gallery {
+  flex: 1.5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+  perspective: 1000px;
+}
+
+.image {
+  border-radius: 12px;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+  width: 170px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: absolute;
+}
+
+/* Веерная раскладка */
+.fan0 {
+  transform: rotate(-20deg) translateX(-100px);
+  z-index: 1;
+}
+.fan1 {
+  transform: rotate(-10deg) translateX(-60px);
+  z-index: 2;
+}
+.fan2 {
+  transform: rotate(-5deg) translateX(-20px);
+  z-index: 3;
+}
+.fan3 {
+  transform: rotate(0deg);
+  z-index: 4;
+}
+.fan4 {
+  transform: rotate(5deg) translateX(20px);
+  z-index: 3;
+}
+.fan5 {
+  transform: rotate(10deg) translateX(60px);
+  z-index: 2;
+}
+.fan6 {
+  transform: rotate(15deg) translateX(90px);
+  z-index: 1;
+}
+.fan7 {
+  transform: rotate(18deg) translateX(120px);
+  z-index: 0;
+}
+
+.image:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.85);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modalImage {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1001;
+}
+
+.navButton {
+  font-size: 3rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1001;
+  margin: 0 20px;
+}
+
+.navButton:hover,
+.closeButton:hover {
+  color: #c94d3f;
+}
+
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+  }
+
+  .text {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .gallery {
+    position: static;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .image {
+    position: static;
+    transform: none !important;
+  }
+}

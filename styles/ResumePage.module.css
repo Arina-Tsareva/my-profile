@@ -1,0 +1,120 @@
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background-color: #ffffff;
+  font-family: "Arial", sans-serif;
+  color: #333;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 20px;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #2d2d2d;
+}
+
+.text {
+  margin: 3px 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.downloadButton {
+  background-color: #f0c9a2;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.downloadButton:hover {
+  background-color: #e0b88c;
+  transform: scale(1.05);
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.sectionTitle {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #222;
+  border-left: 6px solid #f0c9a2;
+  padding-left: 10px;
+  margin-bottom: 20px;
+}
+
+.job {
+  margin-bottom: 25px;
+}
+
+.jobTitle {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 5px 0;
+}
+
+.jobPeriod {
+  font-size: 0.95rem;
+  color: #777;
+  margin-bottom: 8px;
+}
+
+.jobDetails {
+  list-style-type: disc;
+  margin-left: 20px;
+  color: #444;
+}
+
+.list {
+  list-style-type: square;
+  margin-left: 20px;
+  color: #444;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.skillsList {
+  list-style-type: circle;
+  margin-left: 20px;
+  color: #444;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .name {
+    font-size: 1.6rem;
+  }
+
+  .downloadButton {
+    width: 100%;
+    text-align: center;
+  }
+
+  .sectionTitle {
+    font-size: 1.4rem;
+  }
+}

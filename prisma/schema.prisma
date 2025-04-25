@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Comment {
+  id          String     @id @default(cuid()) // Уникальный идентификатор комментария
+  author      String
+  email       String
+  image       String?
+  text        String
+  rating      Int
+  createdAt   DateTime   @default(now())
+  replies     Comment[]  @relation("ReplyRelation")
+  parentId    String?    // Для ответа на другой комментарий
+  parent      Comment?   @relation("ReplyRelation", fields: [parentId], references: [id])
+  likes       Like[]
+  ratings     Rating[]   // Обратная связь для модели Rating
+}
+
+model Like {
+  id        String   @id @default(cuid())
+  userEmail String
+  type      LikeType
+  commentId String
+  comment   Comment  @relation(fields: [commentId], references: [id])
+
+  @@unique([userEmail, commentId]) //ограничение не даст одному пользователю лайкать один комментарий дважды
+}
+
+enum LikeType {
+  LIKE
+  DISLIKE
+}
+
+model Rating {
+  id        String   @id @default(cuid())
+  value     Int
+  createdAt DateTime @default(now())
+  commentId String?  
+  comment   Comment? @relation(fields: [commentId], references: [id])
+}

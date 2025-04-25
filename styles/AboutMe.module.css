@@ -1,0 +1,152 @@
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #e3ebf0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  min-height: 75vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  flex-wrap: wrap;
+  max-width: 1500px;
+  width: 100%;
+  height: 100%;
+}
+
+.text {
+  flex: 2;
+  font-size: 1.2rem;
+  line-height: 2;
+  color: #4a3e36;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 40px;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif;
+}
+
+.paragraph {
+  margin-bottom: 0.8em;
+}
+
+.link {
+  color: #2f1ae8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.imageWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  max-height: 80vh;
+  overflow: hidden;
+  padding-left: 40px;
+}
+
+.image {
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  max-height: 80%;
+  max-width: 90%;
+  object-fit: contain;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border: 3px solid #e2d4c0;
+}
+
+/* небольшое увеличение при наведении */
+.image:hover {
+  transform: scale(1.05);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(0, 0, 0, 0.85);
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modalContent img {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+.closeButton {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2.5rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  z-index: 1001;
+}
+
+.closeButton:hover {
+  color: #b87d4b;
+}
+
+/* Анимация появления модалки */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Адаптив */
+@media (max-width: 500px) {
+  .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .text {
+    font-size: 1rem;
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .image {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .imageWrapper {
+    justify-content: center;
+    padding-left: 0;
+  }
+}

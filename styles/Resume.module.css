@@ -1,0 +1,108 @@
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #fadabb;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  min-height: 75vh;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.text {
+  flex: 1;
+  max-width: 750px;
+  padding-right: 20px;
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif;
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 2;
+  margin-bottom: 10px;
+  font-family: "Comic Neue", "Comic Sans MS", cursive, sans-serif;
+}
+
+.iconWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.arrowIcon {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.imageWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.resumeImage {
+  cursor: pointer;
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.resumeImage:hover {
+  transform: scale(1.05);
+}
+
+/* Адаптивность для планшетов и мобильных */
+@media (max-width: 768px) {
+  .section {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px 16px;
+  }
+
+  .text {
+    padding-right: 0;
+  }
+
+  .heading {
+    font-size: 1.8rem;
+  }
+
+  .description {
+    font-size: 1.05rem;
+  }
+
+  .arrowIcon {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .resumeImage {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    font-size: 1.6rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .arrowIcon {
+    width: 24px;
+  }
+}

@@ -1,0 +1,64 @@
+.wrapper {
+    width: 100%;
+    padding: 3rem 2rem;
+    background-color: #d0dfe9; 
+    text-align: center;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .stars {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .star {
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .star:hover {
+    transform: scale(1.2);
+  }
+  
+  .average {
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .subtitle {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #333;
+  }
+  
+  .authButtons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .authButtons button {
+    background-color: #4b90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .authButtons button:hover {
+    background-color: #367bd6;
+  }
+  
