@@ -26,11 +26,11 @@ const Home = () => {
         <div id="china">
           <China />
         </div>
-        <div id="resume">
-          <Resume />
-        </div>
         <div id="moscow">
           <Moscow />
+        </div>
+        <div id="resume">
+          <Resume />
         </div>
         <div id="frontend">
           <Frontend />
