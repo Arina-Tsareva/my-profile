@@ -15,12 +15,7 @@ const Home = () => {
       <Header />
       <main>
         <div id="home">
-          <Welcome title="">
-            <p>
-              Добро пожаловать! Я Арина, и я рада, что ты здесь! Давай
-              знакомиться!
-            </p>
-          </Welcome>
+          <Welcome />
         </div>
         <div id="about">
           <AboutMe />

@@ -2,17 +2,16 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import styles from '../styles/Welcome.module.css';
 
-const greetingLines = [
-  'Добро пожаловать!',
-  'Я Арина, и я рада, что ты здесь!',
-  'Давай знакомиться!',
-];
-
-const Section = () => {
-  // Прокрутка наверх при загрузке компонента
+const Welcome = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  const greetingLines = [
+    'Добро пожаловать!',
+    'Я Арина, и я рада, что ты здесь!',
+    'Давай знакомиться!',
+  ];
 
   return (
     <section id="home" className={styles.section}>
@@ -44,4 +43,4 @@ const Section = () => {
   );
 };
 
-export default Section;
+export default Welcome;
