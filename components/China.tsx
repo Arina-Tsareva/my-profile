@@ -86,8 +86,8 @@ const China = () => {
             src={src}
             alt={`China ${index + 1}`}
             className={`${styles.image} ${styles[`fan${index % 8}`]}`}
-            width={300} // или нужную ширину
-            height={200} // и высоту
+            width={300} 
+            height={200} 
             onClick={() => handleImageClick(index)}
           />
         ))}

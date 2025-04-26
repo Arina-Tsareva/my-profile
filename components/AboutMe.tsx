@@ -56,7 +56,7 @@ const AboutSection = () => {
             src="/images/about-me.jpg"
             alt="Нальчик"
             className={styles.image}
-            width={300} // укажи свои размеры (примерно ширина в пикселях)
+            width={300} 
             height={300}
             onClick={() => setIsModalOpen(true)}
           />
