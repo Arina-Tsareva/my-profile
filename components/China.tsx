@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from "../styles/China.module.css";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const chinaImages = [
   "/images/china-1.jpg",
@@ -80,11 +81,13 @@ const China = () => {
 
       <div className={styles.gallery}>
         {chinaImages.map((src, index) => (
-          <img
+          <Image
             key={index}
             src={src}
             alt={`China ${index + 1}`}
             className={`${styles.image} ${styles[`fan${index % 8}`]}`}
+            width={300} // или нужную ширину
+            height={200} // и высоту
             onClick={() => handleImageClick(index)}
           />
         ))}
@@ -99,10 +102,12 @@ const China = () => {
             ‹
           </button>
           <div className={styles.modalContent}>
-            <img
+            <Image
               src={chinaImages[selectedImage]}
               alt={`China ${selectedImage + 1}`}
               className={styles.modalImage}
+              width={900}
+              height={700}
             />
           </div>
           <button className={styles.navButton} onClick={nextImage}>

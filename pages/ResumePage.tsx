@@ -85,7 +85,7 @@ export default function ResumePage() {
           </div>
 
           <div className={styles.job}>
-            <h3>ООО "АМИКОМ ТРЕЙД"</h3>
+            <h3>ООО АМИКОМ ТРЕЙД</h3>
             <p className={styles.jobTitle}>Менеджер по маркетингу</p>
             <p className={styles.jobPeriod}>Декабрь 2019 — Май 2020 (6 месяцев)</p>
             <ul className={styles.jobDetails}>

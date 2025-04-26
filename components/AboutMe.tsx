@@ -1,6 +1,7 @@
 import { useState, useRef } from "react"; //useState — хук для управления модальным окном (показывать/скрывать), useRef — создаем ссылку на элемент DOM
 import { motion, useInView } from "framer-motion"; // useInView (из framer-motion) — определяет, находится ли элемент в зоне видимости (например, при прокрутке).
 import styles from "../styles/AboutMe.module.css";
+import Image from "next/image";
 
 //Состояния и анимации
 const AboutSection = () => {
@@ -51,10 +52,12 @@ const AboutSection = () => {
           ))}
         </div>
         <div className={styles.imageWrapper}>
-          <img
+          <Image
             src="/images/about-me.jpg"
             alt="Нальчик"
             className={styles.image}
+            width={300} // укажи свои размеры (примерно ширина в пикселях)
+            height={300}
             onClick={() => setIsModalOpen(true)}
           />
         </div>
@@ -73,7 +76,12 @@ const AboutSection = () => {
             >
               &times;
             </button>
-            <img src="/images/about-me.jpg" alt="Нальчик" />
+            <Image
+              src="/images/about-me.jpg"
+              alt="Нальчик"
+              width={800}
+              height={600}
+            />
           </div>
         </div>
       )}
