@@ -2,7 +2,7 @@ import NextAuth, { AuthOptions } from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 import YandexProvider from "next-auth/providers/yandex";
 
-export const authOptions: AuthOptions = { 
+export const authOptions: AuthOptions = {
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_CLIENT_ID!,
@@ -16,11 +16,11 @@ export const authOptions: AuthOptions = {
   secret: process.env.NEXTAUTH_SECRET,
 
   session: {
-    strategy: "jwt", 
+    strategy: "jwt",
   },
 
   callbacks: {
-    async jwt({ token, account, profile }) {
+    async jwt({ token, account }) {
       if (account) {
         token.accessToken = account.access_token;
       }
@@ -28,7 +28,7 @@ export const authOptions: AuthOptions = {
     },
 
     async session({ session, token }) {
-      session.accessToken = token.accessToken;
+      session.accessToken = token.accessToken as string;
       return session;
     },
   },
