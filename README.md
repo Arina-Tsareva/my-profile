@@ -46,3 +46,5 @@ git clone https://github.com/Arina-Tsareva/my-profile.git
 cd my-portfolio
 npm install
 npm run dev
+
+Vercel: https://my-profile-bwim.vercel.app/
